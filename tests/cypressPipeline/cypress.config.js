@@ -1,6 +1,7 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
+  reporter: 'cypress-circleci-reporter',
   projectId: 'pgo3fe',
   env: {
     baseUrl: 'http://localhost/',
