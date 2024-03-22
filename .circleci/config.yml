@@ -294,12 +294,13 @@ jobs:
             mysql -h 127.0.0.1 --user="root" --execute="REPLACE INTO test.wp_options (option_name, option_value, autoload)  VALUES ('vcv-agreeHubTerms', '1658314019', 'yes');"
             mysql -h 127.0.0.1 --user="root" --execute="REPLACE INTO test.wp_options (option_name, option_value, autoload)  VALUES ('vcv-settings-initial-helpers-enabled', '', 'yes');"
       - run: yarn add cypress@^11.0.1
-      - run:
-          name: Install coverage reporter
-          command: yarn add cypress-circleci-reporter mocha --dev
+      # - run:
+      #     name: Install coverage reporter
+      #     command: yarn add cypress-circleci-reporter mocha --dev
       - run: |
           mkdir test_results
           cd tests/cypressPipeline
+          yarn add cypress-circleci-reporter mocha --dev
           TEST_FILES=$(find ./cypress/e2e -name "*.cy.js")
           echo "$TEST_FILES" | circleci tests run --command="xargs npx cypress run --record --key 09ed9a2e-d563-4bc8-9314-0546c9e53a51 --reporter cypress-circleci-reporter --spec" --verbose --split-by=timings
       - store_test_results:
