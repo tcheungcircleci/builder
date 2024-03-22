@@ -298,6 +298,7 @@ jobs:
       #     name: Install coverage reporter
       #     command: yarn add cypress-circleci-reporter mocha --dev
       - run: |
+          echo ${CIRCLE_WORKING_DIRECTORY}
           mkdir test_results
           cd tests/cypressPipeline
           yarn add cypress-circleci-reporter mocha --dev
