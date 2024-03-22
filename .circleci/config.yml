@@ -293,7 +293,7 @@ jobs:
           command: |
             mysql -h 127.0.0.1 --user="root" --execute="REPLACE INTO test.wp_options (option_name, option_value, autoload)  VALUES ('vcv-agreeHubTerms', '1658314019', 'yes');"
             mysql -h 127.0.0.1 --user="root" --execute="REPLACE INTO test.wp_options (option_name, option_value, autoload)  VALUES ('vcv-settings-initial-helpers-enabled', '', 'yes');"
-      - run: yarn run cypress install
+      - run: yarn add cypress@13.7.1
       - run:
           name: Install coverage reporter
           command: yarn add cypress-circleci-reporter mocha --dev
