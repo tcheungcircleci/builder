@@ -302,7 +302,7 @@ jobs:
           TEST_FILES=$(find ./cypress/e2e -name "*.cy.js")
           echo "$TEST_FILES" | circleci tests run --command="xargs npx cypress run --record --key 09ed9a2e-d563-4bc8-9314-0546c9e53a51 --reporter ../../node_modules/cypress-circleci-reporter --spec" --verbose --split-by=timings
       - store_test_results:
-          path: ./tests/cypressPipeline/test_results
+          path: tests/cypressPipeline/test_results
       - store_artifacts:
           path: ./tests/cypressPipeline/cypress/snapshots
       - store_artifacts:
