@@ -10,7 +10,7 @@ const freeElements = ['Basic Button', 'Facebook Like', 'Faq Toggle', 'Feature', 
 describe('Free elements count', function () {
     it('Check if all free elements are showing up', function () {
 
-        cy.visit('/wp-admin/admin.php?page=vcv-hub')
+        cy.visit('/wp-admin/admin.php?page=vcv-hubs')
         cy.wait(1500)
 
         freeElements.forEach(element => {
