@@ -47,8 +47,8 @@ describe('Keyboard shortcuts', function () {
         // Try Shift + A, S and T combinations, check if it only types capital letters and the current section is still open
 
         //* ID
-        cy.contains('.vcv-ui-navigation-slider-button', 'Advanced').click()
-        cy.contains('.vcv-ui-edit-form-section-header-title', 'HTML Attributes').click()
+        cy.contains('.vcv-ui-navigation-slider', 'Advanced').click()
+        cy.contains('.vcv-ui-edit-form-section-title', 'HTML Attributes').click()
         cy.setInput('Element ID', '{shift}AST')
         cy.contains('.vcv-ui-navigation-slider-button', 'Content').click()
         cy.getIframe('#vcv-editor-iframe').find('#AST')
